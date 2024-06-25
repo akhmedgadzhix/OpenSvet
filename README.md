@@ -1,4 +1,7 @@
-# Пошаговое руководство для себя
+# A step-by-step guide
+
+**ATTENTION!**</br>
+This guide is for a specific machine with specific components. The only reason the repository is not marked as private is for cloning convenience!
 ## 1. LiveISO
 ```bash
     # Partitions
