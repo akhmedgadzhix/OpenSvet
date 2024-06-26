@@ -87,3 +87,41 @@ This guide is for a specific machine with specific components. The only reason t
     reboot
 ```
 ## First Boot
+
+After logging in, enable time synchronization just in case
+```bash
+    # NTP sinc
+    sudo timedatectl set-ntp 1
+```
+
+```bash
+    # AMD GPU drivers
+    sudo pacman -S amdvlk mesa vulkan-radeon libva-mesa-driver \
+    lib32-vulkan-radeon lib32-amdvlk xf86-video-amdgpu
+```
+
+```bash
+    # X11 install
+    sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr
+    echo -e "exec sxhkd &\nexec numlockx\nexec bspwm" > .xinitrc
+```
+
+All configuration files for the user will be located in the 'userconf' directory of this repository
+
+```bash
+    # Cloning this repository into the system
+    git clone https://github.com/akhmedgadzhix/OpenSvet.git
+```
+
+```bash
+    # BSPWM setup
+    sudo pacman -S bspwm sxhkd polybar alacritty picom
+    mkdir -p .config/{sxhkd,bspwm,polybar,picom} # !
+    cp OpenSvet/userconf/bspwmrc .config/bspwm/ && chmod +x .config/bspwm/bspwmrc # !
+    cp OpenSvet/userconf/sxhkdrc .config/sxhkd/ # !
+    cp OpenSvet/userconf/picom.conf .config/picom/ # !
+    cp OpenSvet/userconf/alacritty.yml .config/alacritty/ && alacritty migrate # !
+    cp OpenSvet/userconf/barconfig .config/polybar/config.ini # !
+    # All commands labeled '# !' will be replaced by the script:
+    #chmod +x OpenSvet/userconf.sh && ./OpenSvet/userconf.sh
+```
