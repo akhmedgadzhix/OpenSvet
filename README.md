@@ -3,6 +3,18 @@
 **ATTENTION!**</br>
 This guide is for a specific machine with specific components. The only reason the repository is not marked as private is for cloning convenience!
 ## 1. LiveISO
+If the partitions have been deleted, execute the following commands (otherwise, ignore)
+```bash
+    # Create labels
+    parted /dev/nvme0n1 mklabel gpt --mkpart primary ext4 1MiB 1GiB # primary? 
+    parted /dev/nvme0n1 --mkpart primary ext4 1GiB 100%
+    parted /dev/sda mklabel gpt --mkpart primary ext4 1MiB 100%
+    parted /dev/sdb mklabel gpt --mkpart primary ext4 1MiB 100%
+    pvcreate /dev/sda1 /dev/sdb1
+    vgcreate vg_raid0 /dev/sda1 /dev/sdb1
+    lvcreate -i 2 -I 64 -l 100%FREE -n raiden vg_raid0
+```
+
 ```bash
     # Partitions
     mkfs.fat -F 32 /dev/nvme0n1p1
@@ -17,10 +29,10 @@ This guide is for a specific machine with specific components. The only reason t
 ```bash
     # SWAP-file
     cd /mnt/home && fallocate -l 24G .swapfile
-    dd if=/dev/zero of=.swapfile bs=1G count=24 status=progress
-    chmod 600 .swapfile
-    mkswap .swapfile
-    swapon .swapfile
+    dd if=/dev/zero of=/mnt/home/.swapfile bs=1G count=24 status=progress
+    chmod 600 /mnt/home/.swapfile
+    mkswap /mnt/home/.swapfile
+    swapon /mnt/home/.swapfile
 ```
 
 ```bash
