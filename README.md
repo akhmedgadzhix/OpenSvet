@@ -83,7 +83,7 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ```bash
     # Install GRUB
     pacman -Syy grub efibootmgr
-    grub-install --efi-directory=/boot/efi
+    grub-install --target=x86_64-efi --efi-directory=/boot/efi
     grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
