@@ -18,5 +18,5 @@ bspc config gapless_monocle      false
 
 # Window rules
 bspc rule -a "Google-chrome" desktop=^2 state=fullscreen
-bspc rule -a Telegram desktop=^1 state=floating rectangle=400x600+0+0
+bspc rule -a "Telegram-desktop" desktop=^1 state=floating rectangle=400x600+0+0
 
