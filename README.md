@@ -30,7 +30,7 @@ If the partitions have been deleted, execute the following commands (otherwise, 
     dd if=/dev/zero of=/mnt/home/.swapfile bs=1G count=24 status=progress
     chmod 600 /mnt/home/.swapfile
     mkswap /mnt/home/.swapfile
-    swapon /mnt/home/.swapfile
+    swapon /mnt/home/.swapfile && cd
 ```
 
 ```bash
