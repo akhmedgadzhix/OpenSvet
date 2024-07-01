@@ -96,18 +96,15 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ```
 ## First Boot
 
-After logging in, enable time synchronization just in case
-```bash
-    # NTP sinc
-    sudo timedatectl set-ntp 1
-```
-
 ```bash
     # AMD GPU drivers
     sudo pacman -S amdvlk mesa vulkan-radeon libva-mesa-driver \
     lib32-vulkan-radeon lib32-amdvlk xf86-video-amdgpu
 ```
-
+```bash
+    # NVidia GPUs
+    sudo pacman -Syu nvidia nvidia-utils vulkan-icd-loader lib32-nvidia-utils lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia
+```
 ```bash
     # X11 install
     sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr
