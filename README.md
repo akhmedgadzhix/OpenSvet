@@ -5,11 +5,9 @@ This guide is for a specific machine with specific components. The only reason t
 ## 1. LiveISO
 If the partitions have been deleted, execute the following commands (otherwise, ignore)
 ```bash
-    # Create labels
-    parted /dev/nvme0n1 mklabel gpt --mkpart primary ext4 1MiB 1GiB # primary? 
-    parted /dev/nvme0n1 --mkpart primary ext4 1GiB 100%
-    parted /dev/sda mklabel gpt --mkpart primary ext4 1MiB 100%
-    parted /dev/sdb mklabel gpt --mkpart primary ext4 1MiB 100%
+    echo -e "g\nn\n\n\n+1G\nt\n1\nn\n\n\n\nw" | fdisk /dev/nvme0n1
+    echo -e "g\nn\n\n\n\nw" | fdisk /dev/sda
+    echo -e "g\nn\n\n\n\nw" | fdisk /dev/sdb
     pvcreate /dev/sda1 /dev/sdb1
     vgcreate vg_raid0 /dev/sda1 /dev/sdb1
     lvcreate -i 2 -I 64 -l 100%FREE -n raiden vg_raid0
