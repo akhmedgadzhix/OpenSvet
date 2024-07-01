@@ -35,16 +35,14 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 
 ```bash
     # Pacman Config
-    sudo sed -i -e 's/#ParallelDownloads = [0-9]*/ParallelDownloads = 10/' \
-        -e '/#\[multilib\]/s/^#//' -e '/#\[multilib\]/{n;s/^#//}' /etc/pacman.conf
-
+    sudo sed -i '/^\[multilib\]/, /^\[/{/Include = \/etc\/pacman.d\/mirrorlist/s/^#//}' /etc/pacman.conf
 ```
 
 ```bash
     # Install packages
     pacstrap /mnt base linux linux-firmware linux-headers sudo dhcpcd lvm2 \
-        vim nano btop htop fastfetch iwd samba openssh git base-devel zsh \
-        && cp /etc/pacman.conf /mnt/etc/pacman.conf
+    vim nano btop htop fastfetch iwd samba openssh git base-devel zsh \
+    && cp /etc/pacman.conf /mnt/etc/pacman.conf
 ```
 
 ```bash
