@@ -35,7 +35,7 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 
 ```bash
     # Pacman Config
-    sudo sed -i '/^\[multilib\]/, /^\[/{/Include = \/etc\/pacman.d\/mirrorlist/s/^#//}' /etc/pacman.conf
+    sed -i '/^\[multilib\]/, /^\[/{/Include = \/etc\/pacman.d\/mirrorlist/s/^#//}' /etc/pacman.conf
 ```
 
 ```bash
@@ -54,12 +54,12 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ## Chroot
 ```bash
     # OpenSSH
-    sudo sed -i 's/^#\s*PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+    sed -i 's/^#\s*PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 ```
 
 ```bash
     # Setup sudoers & add users
-    sudo sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
+    sed -i 's/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/' /etc/sudoers
     useradd -mG wheel -g users -s /bin/zsh statix
     echo 'statix:1234' | sudo chpasswd
     echo 'root:1234' | sudo chpasswd
