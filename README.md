@@ -108,7 +108,7 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ```bash
     # X11 install
     sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr
-    echo -e "exec sxhkd &\nexec numlockx\nexec bspwm" > .xinitrc
+    echo -e "exec sxhkd &\nexec bspwm" > .xinitrc
 ```
 
 All configuration files for the user will be located in the 'userconf' directory of this repository
