@@ -18,8 +18,8 @@ If the partitions have been deleted, execute the following commands (otherwise, 
     mkfs.fat -F 32 /dev/nvme0n1p1
     mkfs.ext4 /dev/nvme0n1p2
     mkfs.ext4 /dev/vg_raid0/raiden
-    mkdir -p /mnt/{boot/efi,home}
     mount /dev/nvme0n1p2 /mnt
+    mkdir -p /mnt/{boot/efi,home}
     mount /dev/nvme0n1p1 /mnt/boot/efi
     mount /dev/vg_raid0/raiden /mnt/home
 ```
