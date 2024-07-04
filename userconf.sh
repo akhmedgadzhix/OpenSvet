@@ -1,6 +1,6 @@
 #!/bin/bash
 # Creating an array with "source:destination_item" pairs
-mkdir -p .config/{sxhkd,bspwm,polybar,picom}
+mkdir -p .config/{sxhkd,bspwm,polybar,picom,alacritty}
 declare -A files=(
     ["bspwmrc"]=".config/bspwm/"
     ["sxhkdrc"]=".config/sxhkd/"
