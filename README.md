@@ -130,3 +130,6 @@ All configuration files for the user will be located in the 'userconf' directory
     # All commands labeled '# !' will be replaced by the script:
     #chmod +x OpenSvet/userconf.sh && ./OpenSvet/userconf.sh
 ```
+```bash
+    sudo pacman -Syy ttf-ibm-plex
+```
