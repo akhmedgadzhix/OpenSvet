@@ -41,8 +41,8 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ```bash
     # Install packages
     pacstrap /mnt base linux linux-firmware linux-headers sudo dhcpcd lvm2 \
-    vim nano btop htop fastfetch iwd samba openssh git base-devel zsh \
-    && cp /etc/pacman.conf /mnt/etc/pacman.conf
+    vim nano btop htop fastfetch iwd samba openssh git base-devel zsh
+    cp /etc/pacman.conf /mnt/etc/pacman.conf
 ```
 
 ```bash
