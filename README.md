@@ -35,7 +35,7 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 
 ```bash
     # Pacman Config
-    sed -i '/^\[multilib\]/, /^\[/{/Include = \/etc\/pacman.d\/mirrorlist/s/^#//}' /etc/pacman.conf
+    sed -i -e 's/^#ParallelDownloads = 5/ParallelDownloads = 10/' -e '/^#\[multilib\]/{N;s/#\[multilib\]\n#/[multilib]\n/}' /etc/pacman.conf
 ```
 
 ```bash
