@@ -163,4 +163,5 @@ All configuration files for the user will be located in the 'userconf' directory
 ```bash
     # Aliases
     chmod +x ~/OpenSvet/alias.sh && ~/OpenSvet/alias.sh
+    exec zsh
 ```
