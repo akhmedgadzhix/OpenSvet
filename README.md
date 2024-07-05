@@ -139,7 +139,7 @@ All configuration files for the user will be located in the 'userconf' directory
 ```bash
     # Root Configs
     sudo cp OpenSvet/rootconf/smb.conf /etc/samba
-    sudo cp OpenSvet/rootconf/makepkg.conf /etc/ && sudo pacman -Sy ccache
+    sudo cp OpenSvet/rootconf/makepkg.conf /etc/ && sudo pacman -Sy ccache rust
 ```
 
 ```bash
