@@ -159,3 +159,8 @@ All configuration files for the user will be located in the 'userconf' directory
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="af-magic"/' ~/.zshrc 
     echo "setopt CORRECT" >> ~/.zshrc && exec zsh
 ```
+
+```bash
+    # Aliases
+    chmod +x OpenSvet/alias.sh && ./OpenSvet/alias.sh
+```
