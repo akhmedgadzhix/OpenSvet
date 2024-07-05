@@ -137,8 +137,10 @@ All configuration files for the user will be located in the 'userconf' directory
 ```
 
 ```bash
-    # Root Configs
-    sudo cp OpenSvet/rootconf/smb.conf /etc/samba
+    # Root Configs & Samba
+    sudo cp OpenSvet/rootconf/smb.conf /etc/samba/smb.conf
+    sudo smbpasswd -a statix
+    sudo systemctl enable --now smb
     sudo cp OpenSvet/rootconf/makepkg.conf /etc/ && sudo pacman -Sy ccache rust
 ```
 
@@ -164,4 +166,10 @@ All configuration files for the user will be located in the 'userconf' directory
     # Aliases
     chmod +x ~/OpenSvet/alias.sh && ~/OpenSvet/alias.sh
     exec zsh
+```
+
+```bash
+    # My Programms
+    cd ~/ && sudo cp /OpenSvet/progs/copic /bin
+    
 ```
