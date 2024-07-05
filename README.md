@@ -156,5 +156,6 @@ All configuration files for the user will be located in the 'userconf' directory
     sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     ~/.fzf/install
+    sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="af-magic"/' ~/.zshrc 
     echo "setopt CORRECT" >> ~/.zshrc && exec zsh
 ```
