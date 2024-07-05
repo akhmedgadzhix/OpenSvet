@@ -147,3 +147,14 @@ All configuration files for the user will be located in the 'userconf' directory
     git clone https://aur.archlinux.org/paru && cd paru
     makepkg -si && cd .. && rm -dfR paru
 ```
+
+```bash
+    # ZSH Configuration
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    echo "setopt CORRECT" >> ~/.zshrc && exec zsh
+```
