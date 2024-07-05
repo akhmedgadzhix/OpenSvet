@@ -130,6 +130,20 @@ All configuration files for the user will be located in the 'userconf' directory
     # All commands labeled '# !' will be replaced by the script:
     #chmod +x OpenSvet/userconf.sh && ./OpenSvet/userconf.sh
 ```
+
 ```bash
+    # Font Installation
     sudo pacman -Syy ttf-ibm-plex
+```
+
+```bash
+    # Root Configs
+    sudo cp OpenSvet/rootconf/smb.conf /etc/samba
+    sudo cp OpenSvet/rootconf/makepkg.conf /etc/
+```
+
+```bash
+    # Paru Installation
+    git clone https://aur.archlinux.org/paru && cd paru
+    makepkg -si && cd .. && rm -dfR paru
 ```
