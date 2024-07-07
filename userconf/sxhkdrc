@@ -1,2 +1,30 @@
+# Author: Akhmedgadzhix
+
+# Close App or Window
+super + q
+	/home/statix/.scripts/kill_all_windows.sh
+super + w
+	xdotool getwindowfocus windowclose
+
+# Launcher
+super + space
+	rofi -show drun
+
+# Keuboard switcher
+ctrl + space
+    setxkbmap -layout "us,ru" -option "grp:ctrl_space_toggle"	
+
+# Applications
 super + Return
-    alacritty
+	alacritty
+super + e
+	thunar
+super + h
+	alacritty -e glances
+super + t
+	telegram-desktop
+super + b
+	google-chrome-stable
+
+# Window manage
+#

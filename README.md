@@ -107,7 +107,7 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ```
 ```bash
     # X11 install
-    sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xdotool
+    sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xdotool 
     echo -e "exec sxhkd &\nexec bspwm" > .xinitrc
 ```
 
@@ -120,7 +120,7 @@ All configuration files for the user will be located in the 'userconf' directory
 
 ```bash
     # BSPWM setup
-    sudo pacman -S bspwm sxhkd polybar alacritty picom
+    sudo pacman -S bspwm sxhkd polybar alacritty picom setxkbmap rofi
     mkdir -p .config/{sxhkd,bspwm,polybar,picom,alacritty} # !
     cp OpenSvet/userconf/bspwmrc .config/bspwm/ && chmod +x .config/bspwm/bspwmrc # !
     cp OpenSvet/userconf/sxhkdrc .config/sxhkd/ # !
