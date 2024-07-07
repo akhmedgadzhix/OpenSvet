@@ -120,7 +120,7 @@ All configuration files for the user will be located in the 'userconf' directory
 
 ```bash
     # BSPWM setup
-    sudo pacman -S bspwm sxhkd polybar alacritty picom setxkbmap rofi
+    sudo pacman -S bspwm sxhkd polybar alacritty picom xorg-xkbutils rofi
     mkdir -p .config/{sxhkd,bspwm,polybar,picom,alacritty} # !
     cp OpenSvet/userconf/bspwmrc .config/bspwm/ && chmod +x .config/bspwm/bspwmrc # !
     cp OpenSvet/userconf/sxhkdrc .config/sxhkd/ # !
