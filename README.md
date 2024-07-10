@@ -177,6 +177,6 @@ All configuration files for the user will be located in the 'userconf' directory
 
 ```bash
     # Audio
-    pipewire pipewire-alsa pipewire-pulse pipewire-jack
+    paru -S pipewire pipewire-alsa pipewire-pulse pipewire-jack
     systemctl --user restart pipewire.service
 ```
