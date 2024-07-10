@@ -116,7 +116,7 @@ All configuration files for the user will be located in the 'userconf' directory
 
 ```bash
     # Cloning this repository into the system
-    git clone https://github.com/akhmedgadzhix/OpenSvet.git
+    git clone https://github.com/statix05/OpenSvet.git
 ```
 
 ```bash
