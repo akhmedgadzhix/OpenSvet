@@ -12,7 +12,7 @@ super + space
 
 # Keuboard switcher
 ctrl + space
-    setxkbmap -layout "us,ru" -option "grp:ctrl_space_toggle"	
+	setxkbmap -layout "us,ru" -option "grp:ctrl_space_toggle"	
 
 # Applications
 super + Return
@@ -26,5 +26,16 @@ super + t
 super + b
 	google-chrome-stable
 
+# VPN
+super + alt + f
+	sudo /home/statix/chatvpn-cli vpn start Finland > /dev/null 2>&1 &
+super + alt + v
+	sudo pkill chatvpn-cli
+
 # Window manage
-#
+super + ctrl + f
+	bspc node -l monocle
+
+# Desktop switcher
+super + {1,2,3,4}
+	bspc desktop -f ^{1,2,3,4}

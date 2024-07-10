@@ -41,7 +41,7 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ```bash
     # Install packages
     pacstrap /mnt base linux linux-firmware linux-headers sudo dhcpcd lvm2 \
-    vim nano btop fastfetch iwd samba openssh git base-devel zsh
+    vim nano glances fastfetch iwd samba openssh git base-devel zsh
     cp /etc/pacman.conf /mnt/etc/pacman.conf
 ```
 
@@ -108,7 +108,8 @@ If the partitions have been deleted, execute the following commands (otherwise, 
 ```bash
     # X11 install
     sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xdotool 
-    echo -e "exec sxhkd &\nexec bspwm" > .xinitrc
+    echo -e "exec sxhkd &\nexec bspwm" > ~/.xinitrc
+    echo -e "Xft.dpi: 120" > ~/.Xresources && xrdb -merge ~/.Xresources
 ```
 
 All configuration files for the user will be located in the 'userconf' directory of this repository
@@ -171,7 +172,7 @@ All configuration files for the user will be located in the 'userconf' directory
 ```bash
     # My Programms
     cd ~/ && sudo cp /OpenSvet/progs/copic /bin
-    paru -S thunar telegram-desktop google-chrome glances
+    paru -S thunar telegram-desktop google-chrome
 ```
 
 ```bash
